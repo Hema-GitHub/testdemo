@@ -9,18 +9,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
+
 public class script {
 	private WebDriver driver;
 
 @BeforeClass
 public void beforeClass() {
-	 System.setProperty("webdriver.chrome.driver", "H:\\\\chromedriver_win32 (3)\\\\chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
 	 driver= new ChromeDriver();
 	 driver.manage().window().maximize();
 	 driver.get("http://192.168.101.34/WebSite2");
  }
   @Test
-  public void Application() {
+  public void Application() throws InterruptedException {
 		//Verifying the loaded page TEST CASE 1
 				driver.getTitle();
 				if(driver.getTitle().contains("- My ASP.NET Application")) 
@@ -47,6 +48,8 @@ public void beforeClass() {
 				driver.findElement(By.xpath("//input[@value='submit']")).click();
 				driver.switchTo().alert().accept();
 				driver.switchTo().alert().accept();
+				Thread.sleep(1000);
+				
 				
 				// second Data entry TEST CASE 4
 				driver.navigate().refresh();
@@ -56,6 +59,7 @@ public void beforeClass() {
 				driver.findElement(By.xpath("//input[@value='submit']")).click();
 				driver.switchTo().alert().accept();
 				driver.switchTo().alert().accept();
+				Thread.sleep(1000);
 
 			}
 
