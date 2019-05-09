@@ -18,7 +18,7 @@ public void beforeClass() {
 	 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
 	 driver= new ChromeDriver();
 	 driver.manage().window().maximize();
-	 driver.get("http://192.168.101.34/WebSite2");
+	 driver.get("http://192.168.101.122/WebSite2");
  }
   @Test
   public void Application() throws InterruptedException {
